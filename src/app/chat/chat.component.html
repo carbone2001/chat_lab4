@@ -1,0 +1,17 @@
+<h1>Chat</h1>
+<table style="width: 100%;">
+    <div *ngFor="let mensaje of mensajes" style="width: 100%;">
+        <tr>
+            <td>
+                <p>{{mensaje.usuario}}</p>
+            </td>
+            <td>
+                <p>{{mensaje.mensaje}}</p>
+            </td>
+        </tr>
+    </div>
+</table>
+<div>
+    <input [(ngModel)]="nuevoMensaje" type="text">
+    <button (click)="Enviar()">Enviar</button>
+</div>

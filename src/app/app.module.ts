@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { LoginComponent } from './login/login.component';
+import { ChatComponent } from './chat/chat.component'
+import { FormsModule } from '@angular/forms';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import * as firebase from 'firebase';
+import { environment } from 'src/environments/environment';
+firebase.initializeApp(environment.firebaseConfig);
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

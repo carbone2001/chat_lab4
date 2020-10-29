@@ -117,8 +117,16 @@
               "devServerTarget": "PruebaAppFirebase:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "PruebaAppFirebase"
+    }
+  },
+  "defaultProject": "PruebaAppFirebase",
+  "cli": {
+    "analytics": false
+  }
 }

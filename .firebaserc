@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "prueba-app-4589e": {
+      "hosting": {
+        "PruebaAppFirebase": [
+          "prueba-app-4589e"
+        ]
+      }
+    }
+  }
+}
