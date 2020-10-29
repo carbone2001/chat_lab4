@@ -13,17 +13,25 @@ export class ChatComponent implements OnInit {
     private afs: AngularFirestore
   ) { }
   ngOnInit(): void {
-    this.afs.collection('chat').valueChanges().subscribe(data =>{
+    this.afs.collection('chat',ref => ref.orderBy("fecha","asc"))
+    .valueChanges().subscribe(data =>{
       this.mensajes = data;
+      //console.log(data);
     })
   }
 
   Enviar()
   {
-    this.afs.collection('chat').add({
+    this.afs.collection('chat',).add({
       usuario:localStorage.getItem("usuario"),
-      mensaje:this.nuevoMensaje
+      mensaje:this.nuevoMensaje,
+      fecha:Date.now()
     });
+  }
+
+  UsuarioActual()
+  {
+    return localStorage.getItem("usuario");
   }
 
 }

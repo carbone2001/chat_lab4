@@ -1,9 +1,9 @@
 <h1>Chat</h1>
 <table style="width: 100%;">
-    <div *ngFor="let mensaje of mensajes" style="width: 100%;">
+    <div *ngFor="let mensaje of mensajes" style="width: 100%;background-color: rgb(206, 206, 206);">
         <tr>
             <td>
-                <p>{{mensaje.usuario}}</p>
+                <p [style]="UsuarioActual() == mensaje.usuario ? 'color: red' : 'color:black'"><b>{{mensaje.usuario}}:</b></p>
             </td>
             <td>
                 <p>{{mensaje.mensaje}}</p>
@@ -11,7 +11,7 @@
         </tr>
     </div>
 </table>
-<div>
+<div class="footer">
     <input [(ngModel)]="nuevoMensaje" type="text">
     <button (click)="Enviar()">Enviar</button>
 </div>
